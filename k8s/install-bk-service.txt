@@ -1,0 +1,10 @@
+###########################
+# MariaDB
+###########################
+$ helm install --name bk-mariadb --set mariadbRootPassword=Zcp_1234,mariadbUser=zcp-user,mariadbPassword=Zcp_1234,mariadbDatabase=zcp-database,persistence.enabled=true,persistence.storageClass=standard,metrics.enabled=true stable/mariadb --namespace=bk-service
+
+
+###########################
+# Redis
+###########################
+$ helm install --name bk-redis --set redisPassword=Zcp_1234,persistence.enabled=true,persistence.storageClass=standard,metrics.enabled=true stable/redis --namespace=bk-service
