@@ -51,19 +51,20 @@ management:
 #  endpoint:
 #    health:
 #      show-details: always
-  health:
-    defaults:
-      enabled: true
-    redis:
-      enabled: false
-  metrics:
-    use-global-registry: false
-    distribution:
-      sla:
-        http:
-          server:
-            requests: 100ms, 200ms, 400ms
-      percentiles-histogram:
-        http:
-          server:
-            requests: true
+
+#  health:
+#    defaults:
+#      enabled: true
+#    redis:
+#      enabled: false
+#  metrics:
+#    use-global-registry: false
+#    distribution:
+#      sla:
+#        http:
+#          server:
+#            requests: 100ms, 200ms, 400ms
+#      percentiles-histogram:
+#        http:
+#          server:
+#            requests: true
