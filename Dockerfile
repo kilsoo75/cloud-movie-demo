@@ -1,6 +1,8 @@
 FROM java:8
+#FROM openjdk:8-jdk
 ENV SPRING_ACTIVE_PROFILE dev
-ADD target/cloud-movie-0.0.1-SNAPSHOT.war app.war
+ADD target/cloud-movie-demo-0.0.1-SNAPSHOT.war app.war
+#ADD jennifer/agent.java agent.java
 VOLUME /tmp
 VOLUME /target
 #RUN apt-get update && \
@@ -8,7 +10,8 @@ VOLUME /target
 RUN bash -c 'touch /app.war'
 CMD echo 'test'
 #EXPOSE 8081
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=${SPRING_ACTIVE_PROFILE}","-jar","/app.war"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=${SPRING_ACTIVE_PROFILE}", "-jar","/app.war"]
+#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=${SPRING_ACTIVE_PROFILE}", "-Djennifer.config=/agent.java/conf/jennifer.conf", "-javaagent:/agent.java/jennifer.jar", "-jar","/app.war"]
 
 #docker run -d --rm --name skb-account-service \
 #           -p 8081:8081 \

@@ -4,7 +4,7 @@ metadata:
   name: cloud-movie-frontend-stable
   namespace: zcp-demo
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:

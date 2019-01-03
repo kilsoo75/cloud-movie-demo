@@ -5,15 +5,19 @@ metadata:
   namespace: zcp-demo
 spec:
   rules:
-  - host: cloud-movie-canary.icp-edu.ghama.io
+  - host: cloud-movie-canary.cloudzcp.io
     http:
       paths:
       - backend:
           serviceName: cloud-movie-frontend-canary
           servicePort: 80
-  - host: cloud-movie-new.icp-edu.ghama.io
+  - host: cloud-movie-new.cloudzcp.io
     http:
       paths:
       - backend:
           serviceName: cloud-movie-frontend-new
           servicePort: 80
+  tls:
+  - hosts:
+    - cloud-movie.cloudzcp.io
+    secretName: cloudzcp-io-cert
